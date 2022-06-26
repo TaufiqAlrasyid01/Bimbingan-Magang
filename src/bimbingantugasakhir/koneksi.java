@@ -10,7 +10,7 @@ public class koneksi {
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 	}catch(ClassNotFoundException ex){
-	
+		
 	}
 	try{
 		koneksi = DriverManager.getConnection("jdbc:mysql://localhost/bimbingan_sbd","root","");
