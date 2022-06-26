@@ -8,15 +8,10 @@ package bimbingantugasakhir;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,8 +57,7 @@ public class Login extends javax.swing.JFrame {
     public static String getnama(){
         return nama;
     }
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+   
     private void initComponents() {
 
         Tpass = new javax.swing.JPasswordField();
@@ -122,9 +116,7 @@ public class Login extends javax.swing.JFrame {
         Jdaftar.setForeground(new java.awt.Color(255, 102, 102));
         Jdaftar.setText("Daftar");
         Jdaftar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JdaftarMouseClicked(evt);
-            }
+            
         });
         getContentPane().add(Jdaftar);
         Jdaftar.setBounds(918, 530, 60, 22);
@@ -203,11 +195,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TuserActionPerformed
 
-    private void JdaftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JdaftarMouseClicked
-        new SignUp().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_JdaftarMouseClicked
-
     private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
         String user = Tuser.getText();
         String pass = new String (Tpass.getPassword());
@@ -235,7 +222,7 @@ public class Login extends javax.swing.JFrame {
                     
                     password = pass;
                     dispose();
-                    new DasboardMaha().setVisible(true);
+                   
                     
                 }else{
                     rs=st.executeQuery("SELECT * FROM dosen WHERE NIP = '"+user+"' AND Password ='"+pass+"'");
@@ -250,7 +237,7 @@ public class Login extends javax.swing.JFrame {
                         +"'"+nama+"' !!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         password = pass;
                         dispose();
-                        new DashboardDosen().setVisible(true);
+  
                     }else{
                         JOptionPane.showMessageDialog(null, "Gagal login, user "
                            + "dan pass salah", "Warning", JOptionPane.WARNING_MESSAGE);
